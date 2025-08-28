@@ -1,0 +1,104 @@
+/* ----------------------
+   Ou, de Marni — Styles
+   Palette: gold, black, charcoal (#1f1f1f), white
+   Typeface: 'Inter' + 'Cormorant Garamond' (fallbacks)
+   ---------------------- */
+
+   :root{
+    --gold: #c9a227;
+    --black: #000;
+    --charcoal: #1f1f1f;
+    --gray-600: #6b7280;
+    --gray-200: #e5e7eb;
+    --white: #fff;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0,0,0,.12);
+  }
+  
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; color:var(--charcoal); background:var(--white);
+    font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Inter", Arial, sans-serif;
+  }
+  
+  /* Typography */
+  h1,h2,h3{font-family: "Cormorant Garamond", Georgia, serif; margin:0 0 .5rem}
+  h1{font-size: clamp(2rem, 3vw + 1rem, 3rem)}
+  h2{font-size: clamp(1.5rem, 2vw + .75rem, 2.25rem)}
+  .lead{font-size:1.125rem; color:var(--gray-600)}
+  
+  /* Layout */
+  .container{max-width:1200px; margin:0 auto; padding:0 1rem}
+  .grid{display:grid; gap:1.25rem}
+  .grid-3{grid-template-columns: repeat(3, minmax(0,1fr))}
+  .grid-4{grid-template-columns: repeat(4, minmax(0,1fr))}
+  @media (max-width: 960px){.grid-3,.grid-4{grid-template-columns: repeat(2, 1fr)}}
+  @media (max-width: 640px){.grid-3,.grid-4{grid-template-columns: 1fr}}
+  
+  /* Header / Nav */
+  .topbar{background:var(--black); color:var(--white); font-size:.9rem}
+  .topbar .container{display:flex; align-items:center; justify-content:space-between; padding:.5rem 1rem}
+  
+  .header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:saturate(180%) blur(6px); border-bottom:1px solid var(--gray-200)}
+  .nav{display:flex; align-items:center; gap:1rem}
+  .logo{display:flex; align-items:center; gap:.5rem; text-decoration:none; color:var(--charcoal)}
+  .logo img{height:28px}
+  .logo span{font-weight:700; letter-spacing:.04em}
+  
+  .menu{display:flex; gap:1rem; align-items:center}
+  .menu a{color:var(--charcoal); text-decoration:none; padding:.75rem .5rem; border-radius:10px}
+  .menu a:hover{background:var(--gray-200)}
+  
+  .actions{margin-left:auto; display:flex; gap:.5rem}
+  .icon-btn{background:transparent; border:1px solid var(--gray-200); border-radius:12px; padding:.5rem .75rem; display:flex; gap:.5rem; align-items:center; cursor:pointer}
+  .icon-btn:hover{border-color:var(--gold)}
+  .badge{background:var(--gold); color:var(--black); border-radius:999px; padding:.1rem .45rem; font-size:.75rem}
+  
+  /* Hero */
+  .hero{position:relative; min-height:72vh; display:grid; place-items:center; color:var(--white); background:var(--black)}
+  .hero::before{content:""; position:absolute; inset:0; background:url('assets/hero.jpg') center/cover no-repeat; opacity:.35}
+  .hero-inner{position:relative; text-align:center; padding:4rem 1rem}
+  .hero .cta{display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap; margin-top:1rem}
+  .button{background:var(--gold); color:var(--black); border:0; border-radius:999px; padding:.85rem 1.25rem; font-weight:600; cursor:pointer; box-shadow:var(--shadow)}
+  .button.alt{background:transparent; color:var(--white); border:1px solid rgba(255,255,255,.5)}
+  .button:hover{filter:brightness(1.05)}
+  
+  /* Cards / Products */
+  .card{background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow)}
+  .card img{width:100%; height:280px; object-fit:cover; display:block}
+  .card-body{padding:1rem}
+  .price{font-weight:700}
+  .stars{color:#f5c518}
+  .quick-actions{display:flex; gap:.5rem; margin-top:.5rem}
+  .quick-add{flex:1}
+  
+  /* Sections */
+  .section{padding:3rem 0}
+  .section.dark{background:var(--black); color:var(--white)}
+  .section.charcoal{background:var(--charcoal); color:var(--white)}
+  .section h2{display:flex; align-items:center; gap:.5rem}
+  
+  /* Footer */
+  .footer{background:var(--charcoal); color:var(--white); padding:2rem 0; margin-top:3rem}
+  .footer a{color:var(--white); opacity:.9; text-decoration:none}
+  .footer a:hover{opacity:1}
+  
+  /* Forms */
+  .input, select, textarea{width:100%; padding:.8rem 1rem; border:1px solid var(--gray-200); border-radius:12px}
+  label{font-weight:600}
+  .form-row{display:grid; gap:1rem; grid-template-columns:repeat(2,1fr)}
+  @media (max-width: 720px){.form-row{grid-template-columns:1fr}}
+  
+  /* Tabs */
+  .tabs{display:flex; gap:.5rem; flex-wrap:wrap; margin:1rem 0}
+  .tab{border:1px solid var(--gray-200); padding:.5rem .85rem; border-radius:10px; cursor:pointer}
+  .tab.active, .tab:hover{border-color:var(--gold)}
+  .tabpanes > section{display:none}
+  .tabpanes > section.active{display:block}
+  
+  /* Utilities */
+  .hidden{display:none!important}
+  .notice{background:#fff8e1; border:1px solid #ffe082; padding:.75rem 1rem; border-radius:12px}
+  .small{font-size:.9rem; color:var(--gray-600)}
+  
